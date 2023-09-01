@@ -62,8 +62,7 @@ describe('<App /> integration', () => {
         await userEvent.type(NumberOfEventsInput, '{backspace}{backspace}10');
     
         const EventListDOM = AppDOM.querySelector('#event-list');
-        const allRenderedEventItems =
-        within(EventListDOM).queryAllByRole('listitem');
+        const allRenderedEventItems = within(EventListDOM).queryAllByRole('listitem');
         expect(allRenderedEventItems.length).toEqual(10);
     });
 });

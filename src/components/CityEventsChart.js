@@ -43,11 +43,15 @@ const CityEventsChart = ({ allLocations, events }) => {
                 type="category" 
                 dataKey="city" 
                 name="City"
+                angle={60} 
+                interval={0} 
+                tick={{ dx: 20, dy: 40, fontSize: 14}}
             />
             <YAxis 
                 type="number" 
                 dataKey="count" 
                 name="Number Of Events" 
+                allowDecimals={false}
             />
             <Tooltip cursor={{ strokeDasharray: '3 3' }} />
             <Scatter 

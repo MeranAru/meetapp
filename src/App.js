@@ -6,7 +6,8 @@ import EventList from './components/EventList';
 import NumberOfEvents from './components/NumberOfEvents';
 import { InfoAlert, ErrorAlert, WarningAlert } from './components/Alert';
 import { extractLocations, getEvents } from './api';
-import CityEventsChart from './components/CityEventsChart'
+import CityEventsChart from './components/CityEventsChart';
+import EventGenresChart from './components/EventGenresChart';
 import './App.css';
 
 const App = () => {
@@ -55,10 +56,13 @@ const App = () => {
           setCurrentNOE={setCurrentNOE}
           setErrorAlert={setErrorAlert}
         />
-        <CityEventsChart 
-          allLocations={allLocations} 
-          events={events} 
-        />
+        <div className='charts-container'>
+          <EventGenresChart events={events} />
+          <CityEventsChart 
+            allLocations={allLocations} 
+            events={events} 
+          />
+        </div>
         <EventList events={events}/>
       </div>
   );
